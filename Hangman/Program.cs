@@ -19,5 +19,12 @@ namespace Hangman
             Console.WriteLine("You can have someone choose a word or one can be chosen at random.");
             Console.WriteLine("Enjoy!");
         }
+
+        private static string GetWord()
+        {
+            int numberOfLines = FileIO.TotalLines("\\File\\brit-a-z.txt");
+            Random random = new Random();
+            return FileIO.LineAt("\\File\\brit-a-z.txt", random.Next(0, numberOfLines));
+        }
     }
 }
